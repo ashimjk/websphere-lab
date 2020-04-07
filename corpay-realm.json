@@ -1,0 +1,5228 @@
+{
+  "realm": "corpay",
+  "notBefore": 0,
+  "defaultSignatureAlgorithm": "RS256",
+  "revokeRefreshToken": true,
+  "refreshTokenMaxReuse": 8,
+  "accessTokenLifespan": 3600,
+  "accessTokenLifespanForImplicitFlow": 900,
+  "ssoSessionIdleTimeout": 900,
+  "ssoSessionMaxLifespan": 28800,
+  "ssoSessionIdleTimeoutRememberMe": 0,
+  "ssoSessionMaxLifespanRememberMe": 0,
+  "offlineSessionIdleTimeout": 2592000,
+  "offlineSessionMaxLifespanEnabled": false,
+  "offlineSessionMaxLifespan": 5184000,
+  "accessCodeLifespan": 60,
+  "accessCodeLifespanUserAction": 300,
+  "accessCodeLifespanLogin": 300,
+  "actionTokenGeneratedByAdminLifespan": 43200,
+  "actionTokenGeneratedByUserLifespan": 300,
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "registrationEmailAsUsername": false,
+  "rememberMe": false,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "permanentLockout": false,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "waitIncrementSeconds": 60,
+  "quickLoginCheckMilliSeconds": 1000,
+  "maxDeltaTimeSeconds": 43200,
+  "failureFactor": 15,
+  "eventsEnabled": true,
+  "eventsListeners": [
+    "metrics-listener",
+    "jboss-logging"
+  ],
+  "enabledEventTypes": [
+    "SEND_RESET_PASSWORD",
+    "REMOVE_TOTP",
+    "REVOKE_GRANT",
+    "UPDATE_TOTP",
+    "LOGIN_ERROR",
+    "CLIENT_LOGIN",
+    "RESET_PASSWORD_ERROR",
+    "IMPERSONATE_ERROR",
+    "CODE_TO_TOKEN_ERROR",
+    "CUSTOM_REQUIRED_ACTION",
+    "RESTART_AUTHENTICATION",
+    "IMPERSONATE",
+    "UPDATE_PROFILE_ERROR",
+    "LOGIN",
+    "UPDATE_PASSWORD_ERROR",
+    "CLIENT_INITIATED_ACCOUNT_LINKING",
+    "TOKEN_EXCHANGE",
+    "LOGOUT",
+    "REGISTER",
+    "CLIENT_REGISTER",
+    "IDENTITY_PROVIDER_LINK_ACCOUNT",
+    "UPDATE_PASSWORD",
+    "CLIENT_DELETE",
+    "FEDERATED_IDENTITY_LINK_ERROR",
+    "IDENTITY_PROVIDER_FIRST_LOGIN",
+    "CLIENT_DELETE_ERROR",
+    "VERIFY_EMAIL",
+    "CLIENT_LOGIN_ERROR",
+    "RESTART_AUTHENTICATION_ERROR",
+    "EXECUTE_ACTIONS",
+    "REMOVE_FEDERATED_IDENTITY_ERROR",
+    "TOKEN_EXCHANGE_ERROR",
+    "PERMISSION_TOKEN",
+    "SEND_IDENTITY_PROVIDER_LINK_ERROR",
+    "EXECUTE_ACTION_TOKEN_ERROR",
+    "SEND_VERIFY_EMAIL",
+    "EXECUTE_ACTIONS_ERROR",
+    "REMOVE_FEDERATED_IDENTITY",
+    "IDENTITY_PROVIDER_POST_LOGIN",
+    "IDENTITY_PROVIDER_LINK_ACCOUNT_ERROR",
+    "UPDATE_EMAIL",
+    "REGISTER_ERROR",
+    "REVOKE_GRANT_ERROR",
+    "EXECUTE_ACTION_TOKEN",
+    "LOGOUT_ERROR",
+    "UPDATE_EMAIL_ERROR",
+    "CLIENT_UPDATE_ERROR",
+    "UPDATE_PROFILE",
+    "CLIENT_REGISTER_ERROR",
+    "FEDERATED_IDENTITY_LINK",
+    "SEND_IDENTITY_PROVIDER_LINK",
+    "SEND_VERIFY_EMAIL_ERROR",
+    "RESET_PASSWORD",
+    "CLIENT_INITIATED_ACCOUNT_LINKING_ERROR",
+    "REMOVE_TOTP_ERROR",
+    "VERIFY_EMAIL_ERROR",
+    "SEND_RESET_PASSWORD_ERROR",
+    "CLIENT_UPDATE",
+    "CUSTOM_REQUIRED_ACTION_ERROR",
+    "IDENTITY_PROVIDER_POST_LOGIN_ERROR",
+    "UPDATE_TOTP_ERROR",
+    "CODE_TO_TOKEN",
+    "IDENTITY_PROVIDER_FIRST_LOGIN_ERROR"
+  ],
+  "adminEventsEnabled": true,
+  "adminEventsDetailsEnabled": false,
+  "requiredCredentials": [
+    "password"
+  ],
+  "passwordPolicy": "hashIterations(27500) and hashAlgorithm(pbkdf2-sha256) and lowerCase(1) and length(8) and notUsername(undefined)",
+  "users": [
+    {
+      "username": "user",
+      "enabled": true,
+      "email": "user@orange.com",
+      "firstName": "User",
+      "lastName": "UserLastName",
+      "attributes": {
+        "userClass": "A",
+        "bank-user": true,
+        "userLimit": "JOD 20000000"
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-viewer",
+        "corporate-viewer",
+        "corporate-approval",
+        "bank-approval",
+        "corporate-creator",
+        "bank-creator",
+        "corporate-verifier",
+        "bank-verifier",
+        "offline_access"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "user",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-admin",
+          "outgoing-bc-user",
+          "outgoing-bc-data-entry",
+          "outgoing-bc-verifier",
+          "outgoing-bc-approval"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "account": [
+          "manage-account"
+        ],
+        "payment-resources": [
+          "payment-approval",
+          "payment-data-entry",
+          "payment-verifier"
+        ],
+        "outgoing-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "incoming-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "importer-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "export-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "outward-checks-resources": [
+          "viewer",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "business-lookups": [
+          "bank-verifier",
+          "bank-approval"
+        ],
+        "bank-outward-checks-resources": [
+          "physical-checks-processing"
+        ],
+        "scanner-configurations-resources": [
+          "viewer",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "inward-checks-resources": [
+          "viewer",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "cash-management-resources": [
+          "viewer",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "beneficiary-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "bi-dashboard-resources": [
+          "creator",
+          "viewer"
+        ]
+      }
+    },
+    {
+      "username": "admin",
+      "enabled": true,
+      "email": "admin@orange.com",
+      "firstName": "Admin",
+      "lastName": "AdminOrange",
+      "attributes": {
+        "bank-user": true,
+        "userClass": "A",
+        "userLimit": "JOD 20000000"
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-verifier",
+        "bank-approval",
+        "bank-creator",
+        "bank-viewer"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "user",
+          "creator",
+          "verifier",
+          "approval"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-admin",
+          "outgoing-bc-user",
+          "outgoing-bc-data-entry",
+          "outgoing-bc-verifier",
+          "outgoing-bc-approval"
+        ],
+        "realm-management": [
+          "realm-admin"
+        ],
+        "account": [
+          "manage-account"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "inward-checks-resources": [
+          "inward-check-view",
+          "inward-check-data-entry"
+        ],
+        "cash-management-resources": [
+          "cash-management-view",
+          "cash-management-data-entry"
+        ],
+        "beneficiary-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ]
+      }
+    },
+    {
+      "username": "approval",
+      "enabled": true,
+      "email": "approver@progressoft.com",
+      "firstName": "approval",
+      "lastName": "User",
+      "attributes": {
+        "userClass": "A",
+        "bank-user": true,
+        "userLimit": "JOD 20000000"
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-viewer",
+        "corporate-viewer",
+        "corporate-approval",
+        "bank-approval"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "approval"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-approval"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "outgoing-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "importer-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "scanner-configurations-resources": [
+          "viewer",
+          "approval"
+        ],
+        "outward-checks-resources": [
+          "viewer",
+          "approval"
+        ],
+        "bank-outward-checks-resources": [
+          "voucher-view",
+          "check-voucher-view"
+        ],
+        "inward-checks-resources": [
+          "viewer",
+          "approval"
+        ],
+        "cash-management-resources": [
+          "viewer",
+          "approval"
+        ],
+        "beneficiary-resources": [
+          "viewer",
+          "verifier"
+        ]
+      }
+    },
+    {
+      "username": "verifier",
+      "enabled": true,
+      "email": "verifier@progressoft.com",
+      "firstName": "verifier",
+      "lastName": "User",
+      "attributes": {
+        "userLimit": "JOD 20000000",
+        "bank-user": true
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-verifier",
+        "corporate-viewer",
+        "bank-viewer"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "verifier"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-verifier"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "outgoing-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "importer-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "outward-checks-resources": [
+          "viewer",
+          "verifier"
+        ],
+        "scanner-configurations-resources": [
+          "viewer",
+          "verifier"
+        ],
+        "bank-outward-checks-resources": [
+          "voucher-view",
+          "check-voucher-view"
+        ],
+        "inward-checks-resources": [
+          "viewer",
+          "verifier"
+        ],
+        "cash-management-resources": [
+          "viewer",
+          "verifier"
+        ],
+        "beneficiary-resources": [
+          "viewer",
+          "verifier"
+        ]
+      }
+    },
+    {
+      "username": "creator",
+      "enabled": true,
+      "email": "dataentry@progressoft.com",
+      "firstName": "data Entry",
+      "lastName": "User",
+      "attributes": {
+        "bank-user": true,
+        "userLimit": "JOD 20000000"
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-viewer",
+        "corporate-viewer",
+        "corporate-creator",
+        "bank-creator"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "creator"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-data-entry"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "outgoing-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "importer-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "outward-checks-resources": [
+          "viewer",
+          "creator"
+        ],
+        "scanner-configurations-resources": [
+          "viewer",
+          "creator"
+        ],
+        "cash-management-resources": [
+          "viewer",
+          "creator"
+        ],
+        "bank-outward-checks-resources": [
+          "voucher-view",
+          "check-voucher-view"
+        ],
+        "inward-checks-resources": [
+          "viewer",
+          "creator"
+        ],
+        "beneficiary-resources": [
+          "verifier",
+          "creator"
+        ]
+      }
+    },
+    {
+      "username": "data-entry",
+      "enabled": true,
+      "email": "data-entry@progressoft.com",
+      "firstName": "data Entry",
+      "lastName": "User",
+      "attributes": {
+        "bank-user": true,
+        "userLimit": "JOD 20000000"
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "FBvAgfFHV8k8eHUh"
+        }
+      ],
+      "realmRoles": [
+        "bank-viewer",
+        "corporate-viewer",
+        "corporate-creator",
+        "bank-creator"
+      ],
+      "clientRoles": {
+        "incoming-bc-resources": [
+          "creator"
+        ],
+        "outgoing-bc-resources": [
+          "outgoing-bc-data-entry"
+        ],
+        "corpay-ui": [
+          "user",
+          "admin"
+        ],
+        "outgoing-lg-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "importer-lc-resources": [
+          "creator",
+          "viewer",
+          "verifier",
+          "approval"
+        ],
+        "cash-management-resources": [
+          "cash-management-view",
+          "cash-management-data-entry"
+        ],
+        "beneficiary-resources": [
+          "creator",
+          "viewer"
+        ]
+      }
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "bank-creator"
+      },
+      {
+        "name": "bank-verifier"
+      },
+      {
+        "name": "bank-approval",
+        "composite": true,
+        "composites": {
+          "client": {
+            "realm-management": [
+              "view-realm",
+              "view-users",
+              "view-clients",
+              "query-groups",
+              "manage-users",
+              "query-users",
+              "manage-realm"
+            ]
+          }
+        }
+      },
+      {
+        "name": "bank-viewer"
+      },
+      {
+        "name": "corporate-creator"
+      },
+      {
+        "name": "corporate-verifier"
+      },
+      {
+        "name": "corporate-approval",
+        "composite": true,
+        "composites": {
+          "client": {
+            "realm-management": [
+              "view-realm",
+              "view-users",
+              "query-groups",
+              "manage-users",
+              "query-users",
+              "view-clients",
+              "manage-realm"
+            ]
+          }
+        }
+      },
+      {
+        "name": "corporate-viewer"
+      },
+      {
+        "name": "creator",
+        "description": "corporate data entry privileges"
+      }
+    ],
+    "client": {
+      "incoming-bc-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "outgoing-bc-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "corpay-ui": [
+        {
+          "name": "user",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "admin",
+          "description": "Admin Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "outgoing-lg-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "payment-resources": [
+        {
+          "name": "payment-verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        },
+        {
+          "name": "payment-approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "payment-data-entry",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        },
+        {
+          "name": "admin",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "user",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        }
+      ],
+      "incoming-lg-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "importer-lc-resources": [
+        {
+          "name": "viewer",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        },
+        {
+          "name": "verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        },
+        {
+          "name": "approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "creator",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "export-lc-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "business-lookups": [
+        {
+          "name": "bank-verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "bank-approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        },
+        {
+          "name": "admin",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "user",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+          }
+        }
+      ],
+      "outward-checks-resources": [
+        {
+          "name": "viewer",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "creator",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "bank-outward-checks-resources": [
+        {
+          "name": "physical-checks-processing",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "scanner-configurations-resources": [
+        {
+          "name": "viewer",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "creator",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "inward-checks-resources": [
+        {
+          "name": "viewer",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "creator",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "cash-management-resources": [
+        {
+          "name": "viewer",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "creator",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "verifier",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        },
+        {
+          "name": "approval",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {}
+        }
+      ],
+      "beneficiary-resources": [
+        {
+          "name": "verifier",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "approval",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ],
+      "bi-dashboard-resources": [
+        {
+          "name": "creator",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "viewer",
+          "description": "User Role",
+          "composite": false,
+          "clientRole": true
+        }
+      ]
+    }
+  },
+  "groups": [
+    {
+      "name": "bank",
+      "path": "/bank",
+      "attributes": {},
+      "realmRoles": [],
+      "clientRoles": {},
+      "subGroups": [
+      ]
+    },
+    {
+      "name": "corporates",
+      "path": "/corporates",
+      "attributes": {},
+      "realmRoles": [],
+      "clientRoles": {},
+      "subGroups": [
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "corpay-ui",
+      "rootUrl": "https://{{ tpl (.Values.global.uishell.VirtualService.host ) . }}",
+      "adminUrl": "https://{{ tpl (.Values.global.uishell.VirtualService.host ) . }}",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "https://{{ tpl (.Values.global.uishell.VirtualService.host ) . }}/*"
+      ],
+      "webOrigins": [
+        "https://{{ tpl (.Values.global.uishell.VirtualService.host ) . }}"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+      },
+      "authenticationFlowBindingOverrides": {
+      },
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "protocolMappers": [
+        {
+          "name": "attributeMapper",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-script-based-protocol-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "jsonType.label": "String",
+            "script": "/**\n * Available variables: \n * user - the current user\n * realm - the current realm\n * token - the current token\n * userSession - the current userSession\n * keycloakSession - the current userSession\n */\n\n//insert your code here...\n\nvar groups = user.getGroups();\n\nfor each (var x in groups) {\n    print(x.attributes);\n    token.otherClaims.putAll(x.attributes);\n}\n\ntoken.otherClaims.putAll(user.attributes);\n",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ],
+      "defaultClientScopes": [
+        "web-origins",
+        "role_list",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access"
+      ],
+      "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+      }
+    },
+    {
+      "clientId": "admin-client",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true
+    },
+    {
+      "clientId": "corporate-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "secret": "secret",
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "/*"
+      ],
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "webOrigins": [],
+      "notBefore": 0,
+      "attributes": {
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "saml.assertion.signature": "false",
+        "saml.client.signature": "false",
+        "saml.encrypt": "false",
+        "saml.authnstatement": "false",
+        "saml.onetimeuse.condition": "false",
+        "saml_force_name_id_format": "false",
+        "saml.multivalued.roles": "false",
+        "saml.force.post.binding": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "display.on.consent.screen": "false"
+      },
+      "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "corporate-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "bank",
+            "uris": [
+              "/*/api/v2/corporates/*"
+            ],
+            "scopes": [
+              {
+                "name": "bank-creator"
+              },
+              {
+                "name": "bank-verifier"
+              },
+              {
+                "name": "bank-approval"
+              },
+              {
+                "name": "bank-viewer"
+              }
+            ]
+          },
+          {
+            "name": "corporate",
+            "uris": [
+              "/*/api/v2/profile/*"
+            ],
+            "scopes": [
+              {
+                "name": "corporate-creator"
+              },
+              {
+                "name": "corporate-verifier"
+              },
+              {
+                "name": "corporate-approval"
+              },
+              {
+                "name": "corporate-viewer"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "bank-creator"
+          },
+          {
+            "name": "bank-verifier"
+          },
+          {
+            "name": "bank-approval"
+          },
+          {
+            "name": "bank-viewer"
+          },
+          {
+            "name": "corporate-creator"
+          },
+          {
+            "name": "corporate-verifier"
+          },
+          {
+            "name": "corporate-approval"
+          },
+          {
+            "name": "corporate-viewer"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Corporate Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"corporate-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Corporate Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"corporate-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Corporate Creator Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"corporate-creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Corporate Viewer Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"corporate-viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank Creator Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank Viewer Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "User Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"user\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Corporate Create Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"corporate\"]",
+              "scopes": "[\"corporate-creator\"]",
+              "applyPolicies": "[\"Corporate Creator Role Policy\"]"
+            }
+          },
+          {
+            "name": "Corporate View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"corporate\"]",
+              "scopes": "[\"corporate-viewer\"]",
+              "applyPolicies": "[\"Corporate Viewer Role Policy\"]"
+            }
+          },
+          {
+            "name": "Corporate Verifier Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"corporate\"]",
+              "scopes": "[\"corporate-verifier\"]",
+              "applyPolicies": "[\"Corporate Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Corporate Approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"corporate\"]",
+              "scopes": "[\"corporate-approval\"]",
+              "applyPolicies": "[\"Corporate Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Bank Create Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank\"]",
+              "scopes": "[\"bank-creator\"]",
+              "applyPolicies": "[\"Bank Creator Role Policy\"]"
+            }
+          },
+          {
+            "name": "Bank View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank\"]",
+              "scopes": "[\"bank-viewer\"]",
+              "applyPolicies": "[\"Bank Viewer Role Policy\"]"
+            }
+          },
+          {
+            "name": "Bank Verifier Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank\"]",
+              "scopes": "[\"bank-verifier\"]",
+              "applyPolicies": "[\"Bank Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Bank Approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank\"]",
+              "scopes": "[\"bank-approval\"]",
+              "applyPolicies": "[\"Bank Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "outgoing-lg-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "outgoing-lg-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "outgoing-lg",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Outgoing LG View Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-lg-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Outgoing LG Data Entry Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-lg-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Outgoing LG Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-lg-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Outgoing LG Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-lg-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Outgoing LG View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outgoing-lg\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"Outgoing LG View Role Policy\",\"Outgoing LG Data Entry Role Policy\",\"Outgoing LG Verifier Role Policy\",\"Outgoing LG Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Outgoing LG Data Entry Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outgoing-lg\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"Outgoing LG Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Outgoing LG Verifier Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outgoing-lg\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"Outgoing LG Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Outgoing LG Approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outgoing-lg\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"Outgoing LG Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "incoming-lg-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "incoming-lg-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "incoming-lg",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "LG Data Entry Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"incoming-lg-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LG Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"incoming-lg-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LG Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"incoming-lg-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LG View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"incoming-lg\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"LG Verifier Role Policy\",\"LG Approval Role Policy\",\"LG Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "LG Request Verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"incoming-lg\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"LG Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "LG Approve Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"incoming-lg\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"LG Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "importer-lc-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "importer-lc-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "importer-lc",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Importer LC View Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"importer-lc-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Importer LC Data Entry Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"importer-lc-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Importer LC Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"importer-lc-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Importer LC Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"importer-lc-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Importer LC View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"importer-lc\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"Importer LC View Role Policy\",\"Importer LC Data Entry Role Policy\",\"Importer LC Verifier Role Policy\",\"Importer LC Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Importer LC Data Entry Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"importer-lc\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"Importer LC Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Importer LC Verifier Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"importer-lc\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"Importer LC Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Importer LC Approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"importer-lc\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"Importer LC Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "payment-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "payment-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "outward-payment",
+            "uris": [
+              "/api/v1/payment/transaction/*"
+            ],
+            "scopes": [
+              {
+                "name": "create-payment"
+              },
+              {
+                "name": "view-payment"
+              },
+              {
+                "name": "list-payments"
+              },
+              {
+                "name": "repair-payment"
+              },
+              {
+                "name": "suspend-payment"
+              },
+              {
+                "name": "requestVerification-payment"
+              },
+              {
+                "name": "approve-payment"
+              },
+              {
+                "name": "submit-payment"
+              },
+              {
+                "name": "reject-payment"
+              },
+              {
+                "name": "cancel-payment"
+              },
+              {
+                "name": "cancelRepair-payment"
+              },
+              {
+                "name": "reverify-payment"
+              },
+              {
+                "name": "requestApproval-payment"
+              },
+              {
+                "name": "getAdviceCount-payment"
+              },
+              {
+                "name": "getRelatedMessages-payment"
+              }
+            ]
+          },
+          {
+            "name": "failed-payment",
+            "uris": [
+              "/api/v1/payment/failed-message/*"
+            ],
+            "scopes": [
+              {
+                "name": "getFailedMessage-payment"
+              }
+            ]
+          },
+          {
+            "name": "inward-payment",
+            "uris": [
+              "/api/v1/payment/inward/*"
+            ],
+            "scopes": [
+              {
+                "name": "reply-inwardPayment"
+              },
+              {
+                "name": "requestApproval-inwardPayment"
+              },
+              {
+                "name": "approve-inwardPayment"
+              },
+              {
+                "name": "rejectVerification-inwardPayment"
+              },
+              {
+                "name": "reject-inwardPayment"
+              }
+            ]
+          },
+          {
+            "name": "recurring",
+            "uris": [
+              "/api/v1/payment/recurring/*"
+            ],
+            "scopes": [
+              {
+                "name": "requestVerification-recurringPayment"
+              },
+              {
+                "name": "cancel-recurringPayment"
+              },
+              {
+                "name": "requestApproval-recurringPayment"
+              },
+              {
+                "name": "reject-recurringPayment"
+              },
+              {
+                "name": "approveActivation-recurringPayment"
+              },
+              {
+                "name": "approveSuspension-recurringPayment"
+              },
+              {
+                "name": "reverify-recurringPayment"
+              },
+              {
+                "name": "approve-recurringPayment"
+              }
+            ]
+          },
+          {
+            "name": "schedule",
+            "uris": [
+              "/api/v1/payment/schedule/*"
+            ],
+            "scopes": [
+              {
+                "name": "repair-schedule"
+              },
+              {
+                "name": "suspend-schedule"
+              },
+              {
+                "name": "requestSuspendApproval-schedule"
+              },
+              {
+                "name": "reject-schedule"
+              },
+              {
+                "name": "rejectSuspension-schedule"
+              },
+              {
+                "name": "cancelRepair-schedule"
+              },
+              {
+                "name": "requestApproval-schedule"
+              },
+              {
+                "name": "activate-schedule"
+              },
+              {
+                "name": "cancel-schedule"
+              },
+              {
+                "name": "approveSuspension-schedule"
+              },
+              {
+                "name": "requestVerification-schedule"
+              },
+              {
+                "name": "approveRequest-schedule"
+              },
+              {
+                "name": "requestActivationApproval-schedule"
+              },
+              {
+                "name": "approveActivation-schedule"
+              },
+              {
+                "name": "view-schedule"
+              },
+              {
+                "name": "viewTransactions-schedule"
+              },
+              {
+                "name": "viewbyOrgTransaction-schedule"
+              }
+            ]
+          },
+          {
+            "name": "standing",
+            "uris": [
+              "/api/v1/payment/standing/*"
+            ],
+            "scopes": [
+              {
+                "name": "viewbyOrgTransaction-standing"
+              }
+            ]
+          },
+          {
+            "name": "salary",
+            "uris": [
+              "/api/v1/payment/salary/*"
+            ],
+            "scopes": [
+              {
+                "name": "import-employee"
+              },
+              {
+                "name": "repair-employee"
+              },
+              {
+                "name": "requestVerification-employee"
+              },
+              {
+                "name": "cancelRepair-employee"
+              },
+              {
+                "name": "requestApproval-employee"
+              },
+              {
+                "name": "suspend-employee"
+              },
+              {
+                "name": "rejectVerification-employee"
+              },
+              {
+                "name": "approve-employee"
+              },
+              {
+                "name": "reject-employee"
+              },
+              {
+                "name": "suspensionApproval-employee"
+              },
+              {
+                "name": "rejectSuspension-employee"
+              },
+              {
+                "name": "approveSuspension-employee"
+              },
+              {
+                "name": "view-employee"
+              },
+              {
+                "name": "create-salary"
+              },
+              {
+                "name": "view-salary"
+              },
+              {
+                "name": "list-salaries"
+              },
+              {
+                "name": "submit-salary"
+              },
+              {
+                "name": "requestApproval-salary"
+              },
+              {
+                "name": "suspend-salary"
+              },
+              {
+                "name": "activate-salary"
+              },
+              {
+                "name": "cancel-salary"
+              },
+              {
+                "name": "approve-salary"
+              }
+            ]
+          },
+          {
+            "name": "mandate",
+            "uris": [
+              "/api/v1/payment/mandate/*"
+            ],
+            "scopes": [
+              {
+                "name": "create-mandate"
+              },
+              {
+                "name": "submit-mandate"
+              },
+              {
+                "name": "repair-mandate"
+              },
+              {
+                "name": "requestApproval-mandate"
+              },
+              {
+                "name": "suspend-mandate"
+              },
+              {
+                "name": "reject-mandate"
+              },
+              {
+                "name": "cancelRepair-mandate"
+              },
+              {
+                "name": "reverify-mandate"
+              },
+              {
+                "name": "approve-mandate"
+              },
+              {
+                "name": "cancel-mandate"
+              },
+              {
+                "name": "requestVerification-mandate"
+              },
+              {
+                "name": "view-mandate"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "create-payment"
+          },
+          {
+            "name": "view-payment"
+          },
+          {
+            "name": "list-payments"
+          },
+          {
+            "name": "repair-payment"
+          },
+          {
+            "name": "suspend-payment"
+          },
+          {
+            "name": "requestVerification-payment"
+          },
+          {
+            "name": "approve-payment"
+          },
+          {
+            "name": "submit-payment"
+          },
+          {
+            "name": "reject-payment"
+          },
+          {
+            "name": "cancel-payment"
+          },
+          {
+            "name": "cancelRepair-payment"
+          },
+          {
+            "name": "reverify-payment"
+          },
+          {
+            "name": "requestApproval-payment"
+          },
+          {
+            "name": "getAdviceCount-payment"
+          },
+          {
+            "name": "getRelatedMessages-payment"
+          },
+          {
+            "name": "getFailedMessage-payment"
+          },
+          {
+            "name": "reply-inwardPayment"
+          },
+          {
+            "name": "requestApproval-inwardPayment"
+          },
+          {
+            "name": "approve-inwardPayment"
+          },
+          {
+            "name": "rejectVerification-inwardPayment"
+          },
+          {
+            "name": "reject-inwardPayment"
+          },
+          {
+            "name": "requestVerification-recurringPayment"
+          },
+          {
+            "name": "cancel-recurringPayment"
+          },
+          {
+            "name": "requestApproval-recurringPayment"
+          },
+          {
+            "name": "reject-recurringPayment"
+          },
+          {
+            "name": "approveActivation-recurringPayment"
+          },
+          {
+            "name": "approveSuspension-recurringPayment"
+          },
+          {
+            "name": "reverify-recurringPayment"
+          },
+          {
+            "name": "approve-recurringPayment"
+          },
+          {
+            "name": "repair-schedule"
+          },
+          {
+            "name": "suspend-schedule"
+          },
+          {
+            "name": "requestSuspendApproval-schedule"
+          },
+          {
+            "name": "reject-schedule"
+          },
+          {
+            "name": "rejectSuspension-schedule"
+          },
+          {
+            "name": "cancelRepair-schedule"
+          },
+          {
+            "name": "requestApproval-schedule"
+          },
+          {
+            "name": "activate-schedule"
+          },
+          {
+            "name": "cancel-schedule"
+          },
+          {
+            "name": "approveSuspension-schedule"
+          },
+          {
+            "name": "requestVerification-schedule"
+          },
+          {
+            "name": "approveRequest-schedule"
+          },
+          {
+            "name": "requestActivationApproval-schedule"
+          },
+          {
+            "name": "approveActivation-schedule"
+          },
+          {
+            "name": "view-schedule"
+          },
+          {
+            "name": "viewTransactions-schedule"
+          },
+          {
+            "name": "viewbyOrgTransaction-schedule"
+          },
+          {
+            "name": "viewbyOrgTransaction-standing"
+          },
+          {
+            "name": "import-employee"
+          },
+          {
+            "name": "repair-employee"
+          },
+          {
+            "name": "requestVerification-employee"
+          },
+          {
+            "name": "cancelRepair-employee"
+          },
+          {
+            "name": "requestApproval-employee"
+          },
+          {
+            "name": "suspend-employee"
+          },
+          {
+            "name": "rejectVerification-employee"
+          },
+          {
+            "name": "approve-employee"
+          },
+          {
+            "name": "reject-employee"
+          },
+          {
+            "name": "suspensionApproval-employee"
+          },
+          {
+            "name": "rejectSuspension-employee"
+          },
+          {
+            "name": "approveSuspension-employee"
+          },
+          {
+            "name": "view-employee"
+          },
+          {
+            "name": "create-salary"
+          },
+          {
+            "name": "view-salary"
+          },
+          {
+            "name": "list-salaries"
+          },
+          {
+            "name": "submit-salary"
+          },
+          {
+            "name": "requestApproval-salary"
+          },
+          {
+            "name": "suspend-salary"
+          },
+          {
+            "name": "activate-salary"
+          },
+          {
+            "name": "cancel-salary"
+          },
+          {
+            "name": "approve-salary"
+          },
+          {
+            "name": "create-mandate"
+          },
+          {
+            "name": "submit-mandate"
+          },
+          {
+            "name": "repair-mandate"
+          },
+          {
+            "name": "requestApproval-mandate"
+          },
+          {
+            "name": "suspend-mandate"
+          },
+          {
+            "name": "reject-mandate"
+          },
+          {
+            "name": "cancelRepair-mandate"
+          },
+          {
+            "name": "reverify-mandate"
+          },
+          {
+            "name": "approve-mandate"
+          },
+          {
+            "name": "cancel-mandate"
+          },
+          {
+            "name": "requestVerification-mandate"
+          },
+          {
+            "name": "view-mandate"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Payment Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"payment-resources/payment-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Payment Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"payment-resources/payment-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Payment Data Entry Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"payment-resources/payment-data-entry\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Admin Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"payment-resources/admin\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Payment Create Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"create-payment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"list-payments\",\"view-payment\",\"getAdviceCount-payment\",\"getRelatedMessages-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\",\"Payment Data Entry Role Policy\",\"Admin Role Policy\"]"
+            }
+          },
+          {
+            "name": "Failed messages view Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"failed-payment\"]",
+              "scopes": "[\"getFailedMessage-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\",\"Payment Data Entry Role Policy\",\"Admin Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment Repair Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"repair-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment Suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"suspend-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment request verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"requestVerification-payment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment Approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"approve-payment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment Submission Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"submit-payment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment Rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"reject-payment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"cancel-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\",\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment repair cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"cancelRepair-payment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment reverification  Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"reverify-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Payment request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-payment\"]",
+              "scopes": "[\"requestApproval-payment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Inward Payment reply Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-payment\"]",
+              "scopes": "[\"reply-inwardPayment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Inward Payment request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-payment\"]",
+              "scopes": "[\"requestApproval-inwardPayment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Inward Payment approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-payment\"]",
+              "scopes": "[\"approve-inwardPayment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Inward Payment verification rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-payment\"]",
+              "scopes": "[\"rejectVerification-inwardPayment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Inward Payment rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-payment\"]",
+              "scopes": "[\"reject-inwardPayment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment request verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"requestVerification-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment cancel Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"cancel-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"requestApproval-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"reject-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment approve activation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"approveActivation-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment approve suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"approveSuspension-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment reverification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"reverify-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Recurring Payment approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"recurring\"]",
+              "scopes": "[\"approve-recurringPayment\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule repair Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"repair-schedule\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"suspend-schedule\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule request suspension approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"requestSuspendApproval-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"reject-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule suspension rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"rejectSuspension-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule repair cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"cancelRepair-schedule\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"requestApproval-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule activation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"activate-schedule\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"cancel-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule suspension approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"approveSuspension-schedule\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule request verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"requestVerification-schedule\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule approve request Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"approveRequest-schedule\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule request activation approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"requestActivationApproval-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule activation approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"approveActivation-schedule\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Schedule viewing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"schedule\"]",
+              "scopes": "[\"view-schedule\", \"viewTransactions-schedule\",\"viewbyOrgTransaction-schedule\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\",\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Standing instruction viewing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"standing\"]",
+              "scopes": "[\"viewbyOrgTransaction-standing\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\",\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee Importing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"import-employee\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee repairing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"repair-employee\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee request verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"requestVerification-employee\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee cancel repair Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"cancelRepair-employee\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"suspend-employee\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"requestApproval-employee\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee verification rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"rejectVerification-employee\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"approve-employee\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"reject-employee\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee suspension verification approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"suspensionApproval-employee\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee suspension rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"rejectSuspension-employee\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\",\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee suspension approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"approveSuspension-employee\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Employee viewing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"view-employee\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\",\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file creation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"create-salary\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file viewing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"view-salary\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\",\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary files listing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"list-salaries\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\",\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file submitting Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"submit-salary\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"requestApproval-salary\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"suspend-salary\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file activation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"activate-salary\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\",\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"cancel-salary\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Salary file approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"salary\"]",
+              "scopes": "[\"approve-salary\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate creation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"create-mandate\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate submission Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"submit-mandate\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate repair Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"repair-mandate\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate request approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"requestApproval-mandate\"]",
+              "applyPolicies": "[\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate suspension Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"suspend-mandate\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate rejection Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"reject-mandate\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate repair cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"cancelRepair-mandate\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate reVerification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"reverify-mandate\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate approval Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"approve-mandate\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate cancellation Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"cancel-mandate\"]",
+              "applyPolicies": "[\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate request Verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"requestVerification-mandate\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "Mandate viewing Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"mandate\"]",
+              "scopes": "[\"view-mandate\"]",
+              "applyPolicies": "[\"Payment Data Entry Role Policy\",\"Payment Approval Role Policy\",\"Payment Verifier Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "export-lc-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "export-lc-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "export-lc",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "LC Data Entry Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"export-lc-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LC Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"export-lc-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LC Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"export-lc-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "LC View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"export-lc\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"LC Verifier Role Policy\",\"LC Approval Role Policy\",\"LC Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "LC Request Verification Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"export-lc\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"LC Data Entry Role Policy\"]"
+            }
+          },
+          {
+            "name": "LC Approve Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"export-lc\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"LC Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "outward-checks-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "outward-checks-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "outward-checks",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "viewer role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outward-checks-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "creator role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outward-checks-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outward-checks-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outward-checks-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-checks\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"viewer role policy\"]"
+            }
+          },
+          {
+            "name": "create permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-checks\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"creator role policy\"]"
+            }
+          },
+          {
+            "name": "verify permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-checks\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"verifier role policy\"]"
+            }
+          },
+          {
+            "name": "approve permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"outward-checks\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"approval role policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "business-lookups",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "redirectUris": [],
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "business-lookups",
+        "allowRemoteResourceManagement": false,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "business-lookups",
+            "uris": [
+              "/api/v1/banks/*"
+            ],
+            "scopes": [
+              {
+                "name": "list-branches"
+              },
+              {
+                "name": "list-banks"
+              },
+              {
+                "name": "view-bank"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "list-branches"
+          },
+          {
+            "name": "list-banks"
+          },
+          {
+            "name": "view-bank"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Bank Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"business-lookups/bank-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"business-lookups/bank-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Admin Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"business-lookups/admin\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Bank View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"business-lookups\"]",
+              "scopes": "[\"list-banks\",\"view-bank\",\"list-branches\"]",
+              "applyPolicies": "[\"Bank Verifier Role Policy\",\"Bank Approval Role Policy\",\"Admin Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "bank-outward-checks-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "bank-outward-checks-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "bank-outward-checks",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "get-voucher"
+              },
+              {
+                "name": "list-vouchers"
+              },
+              {
+                "name": "list-voucher-checks"
+              },
+              {
+                "name": "get-voucher-check"
+              },
+              {
+                "name": "get-physical-check"
+              },
+              {
+                "name": "list-physical-checks"
+              },
+              {
+                "name": "create-physical-check"
+              },
+              {
+                "name": "update-physical-check"
+              },
+              {
+                "name": "delete-physical-check"
+              },
+              {
+                "name": "rescan-physical-check"
+              },
+              {
+                "name": "submit-voucher"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "physical-checks processing role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"bank-outward-checks-resources/physical-checks-processing\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "physical-checks processing permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank-outward-checks\"]",
+              "scopes": "[\"get-voucher\",\"list-vouchers\",\"list-voucher-checks\",\"get-voucher-check\",\"get-physical-check\",\"list-physical-checks\",\"create-physical-check\",\"update-physical-check\",\"delete-physical-check\",\"rescan-physical-check\",\"submit-voucher\"]",
+              "applyPolicies": "[\"physical-checks processing role policy\"]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "list-vouchers"
+          },
+          {
+            "name": "get-voucher"
+          },
+          {
+            "name": "list-voucher-checks"
+          },
+          {
+            "name": "get-voucher-check"
+          },
+          {
+            "name": "get-physical-check"
+          },
+          {
+            "name": "list-physical-checks"
+          },
+          {
+            "name": "create-physical-check"
+          },
+          {
+            "name": "update-physical-check"
+          },
+          {
+            "name": "delete-physical-check"
+          },
+          {
+            "name": "rescan-physical-check"
+          },
+          {
+            "name": "submit-voucher"
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "scanner-configurations-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "scanner-configurations-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "scanner-configurations",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "viewer role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"scanner-configurations-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "creator role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"scanner-configurations-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"scanner-configurations-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"scanner-configurations-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"scanner-configurations\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"viewer role policy\"]"
+            }
+          },
+          {
+            "name": "create permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"scanner-configurations\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"creator role policy\"]"
+            }
+          },
+          {
+            "name": "verify permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"scanner-configurations\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"verifier role policy\"]"
+            }
+          },
+          {
+            "name": "approve permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"scanner-configurations\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"approval role policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "inward-checks-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "inward-checks-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "inward-checks",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "viewer role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"inward-checks-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "creator role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"inward-checks-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"inward-checks-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"inward-checks-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-checks\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"viewer role policy\"]"
+            }
+          },
+          {
+            "name": "create permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-checks\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"creator role policy\"]"
+            }
+          },
+          {
+            "name": "verify permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-checks\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"verifier role policy\"]"
+            }
+          },
+          {
+            "name": "approve permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"inward-checks\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"approval role policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "cash-management-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "cash-management-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "cash-management",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "viewer role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"cash-management-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "creator role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"cash-management-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"cash-management-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"cash-management-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"cash-management\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"viewer role policy\"]"
+            }
+          },
+          {
+            "name": "create permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"cash-management\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"creator role policy\"]"
+            }
+          },
+          {
+            "name": "verify permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"cash-management\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"verifier role policy\"]"
+            }
+          },
+          {
+            "name": "approve permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"cash-management\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"approval role policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "outgoing-bc-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "outgoing-bc-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "outgoing-bc",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create-bc"
+              },
+              {
+                "name": "repair-outgoing-bc"
+              },
+              {
+                "name": "outgoing-bc-request-verification"
+              },
+              {
+                "name": "outgoing-bc-request-repair"
+              },
+              {
+                "name": "outgoing-bc-request-approval"
+              },
+              {
+                "name": "suspend-outgoing-bc"
+              },
+              {
+                "name": "reject-outgoing-bc"
+              },
+              {
+                "name": "approve-outgoing-bc"
+              },
+              {
+                "name": "cancel-outgoing-bc"
+              },
+              {
+                "name": "create-amendment"
+              },
+              {
+                "name": "repair-amendment"
+              },
+              {
+                "name": "amendment-request-verification"
+              },
+              {
+                "name": "amendment-request-repair"
+              },
+              {
+                "name": "amendment-request-approval"
+              },
+              {
+                "name": "suspend-amendment"
+              },
+              {
+                "name": "reject-amendment"
+              },
+              {
+                "name": "approve-amendment"
+              },
+              {
+                "name": "cancel-amendment"
+              },
+              {
+                "name": "create-cancellation"
+              },
+              {
+                "name": "repair-cancellation"
+              },
+              {
+                "name": "cancellation-request-verification"
+              },
+              {
+                "name": "cancellation-request-repair"
+              },
+              {
+                "name": "cancellation-request-approval"
+              },
+              {
+                "name": "suspend-cancellation"
+              },
+              {
+                "name": "reject-cancellation"
+              },
+              {
+                "name": "approve-cancellation"
+              },
+              {
+                "name": "cancel-cancellation"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "outgoing bc data entry role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-bc-resources/outgoing-bc-data-entry\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "outgoing bc verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-bc-resources/outgoing-bc-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "outgoing bc approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-bc-resources/outgoing-bc-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "outgoing bc admin role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-bc-resources/outgoing-bc-admin\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "outgoing bc user role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"outgoing-bc-resources/outgoing-bc-user\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "outgoing bc data entry permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view",
+              "create-bc",
+              "repair-outgoing-bc",
+              "create-amendment",
+              "repair-amendment",
+              "create-cancellation",
+              "repair-cancellation"
+            ],
+            "config": {
+              "resources": "[\"outgoing-bc\"]",
+              "applyPolicies": "[\"outgoing bc data entry role policy\"]"
+            }
+          },
+          {
+            "name": "outgoing bc verifier permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "scopes": [
+              "view",
+              "outgoing-bc-request-repair",
+              "outgoing-bc-request-approval",
+              "suspend-outgoing-bc",
+              "amendment-request-repair",
+              "amendment-request-approval",
+              "suspend-amendment",
+              "cancellation-request-repair",
+              "cancellation-request-approval",
+              "suspend-cancellation"
+            ],
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "applyPolicies": "[\"outgoing bc verifier role policy\"]"
+            }
+          },
+          {
+            "name": "outgoing bc approval permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view",
+              "outgoing-bc-request-verification",
+              "outgoing-bc-request-repair",
+              "suspend-outgoing-bc",
+              "reject-outgoing-bc",
+              "approve-outgoing-bc",
+              "cancel-outgoing-bc",
+              "amendment-request-verification",
+              "amendment-request-repair",
+              "suspend-amendment",
+              "reject-amendment",
+              "approve-amendment",
+              "cancel-amendment",
+              "cancellation-request-verification",
+              "cancellation-request-repair",
+              "suspend-cancellation",
+              "reject-cancellation",
+              "approve-cancellation",
+              "cancel-cancellation"
+            ],
+            "config": {
+              "resources": "[\"outgoing-bc\"]",
+              "applyPolicies": "[\"outgoing bc approval role policy\"]"
+            }
+          },
+          {
+            "name": "outgoing bc user permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view"
+            ],
+            "config": {
+              "resources": "[\"outgoing-bc\"]",
+              "applyPolicies": "[\"outgoing bc user role policy\"]"
+            }
+          },
+          {
+            "name": "outgoing bc admin permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "amendment-request-approval",
+              "cancellation-request-approval",
+              "view",
+              "outgoing-bc-request-verification",
+              "outgoing-bc-request-repair",
+              "outgoing-bc-request-approval",
+              "suspend-outgoing-bc",
+              "reject-outgoing-bc",
+              "approve-outgoing-bc",
+              "cancel-outgoing-bc",
+              "amendment-request-verification",
+              "amendment-request-repair",
+              "suspend-amendment",
+              "reject-amendment",
+              "approve-amendment",
+              "cancel-amendment",
+              "cancellation-request-verification",
+              "cancellation-request-repair",
+              "suspend-cancellation",
+              "reject-cancellation",
+              "approve-cancellation",
+              "cancel-cancellation"
+            ],
+            "config": {
+              "resources": "[\"outgoing-bc\"]",
+              "applyPolicies": "[\"outgoing bc admin role policy\"]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create-bc"
+          },
+          {
+            "name": "repair-outgoing-bc"
+          },
+          {
+            "name": "outgoing-bc-request-verification"
+          },
+          {
+            "name": "outgoing-bc-request-repair"
+          },
+          {
+            "name": "outgoing-bc-request-approval"
+          },
+          {
+            "name": "suspend-outgoing-bc"
+          },
+          {
+            "name": "reject-outgoing-bc"
+          },
+          {
+            "name": "approve-outgoing-bc"
+          },
+          {
+            "name": "cancel-outgoing-bc"
+          },
+          {
+            "name": "create-amendment"
+          },
+          {
+            "name": "repair-amendment"
+          },
+          {
+            "name": "amendment-request-verification"
+          },
+          {
+            "name": "amendment-request-repair"
+          },
+          {
+            "name": "amendment-request-approval"
+          },
+          {
+            "name": "suspend-amendment"
+          },
+          {
+            "name": "reject-amendment"
+          },
+          {
+            "name": "approve-amendment"
+          },
+          {
+            "name": "cancel-amendment"
+          },
+          {
+            "name": "create-cancellation"
+          },
+          {
+            "name": "repair-cancellation"
+          },
+          {
+            "name": "cancellation-request-verification"
+          },
+          {
+            "name": "cancellation-request-repair"
+          },
+          {
+            "name": "cancellation-request-approval"
+          },
+          {
+            "name": "suspend-cancellation"
+          },
+          {
+            "name": "reject-cancellation"
+          },
+          {
+            "name": "approve-cancellation"
+          },
+          {
+            "name": "cancel-cancellation"
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "incoming-bc-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "incoming-bc-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "incoming-bc",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "creator role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"incoming-bc-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"incoming-bc-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"incoming-bc-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "user role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"incoming-bc-resources/user\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "create permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "create"
+            ],
+            "config": {
+              "resources": "[\"incoming-bc\"]",
+              "applyPolicies": "[\"creator role policy\"]"
+            }
+          },
+          {
+            "name": "verifier permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "scopes": [
+              "verify"
+            ],
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "applyPolicies": "[\"verifier role policy\"]"
+            }
+          },
+          {
+            "name": "approval permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "approve"
+            ],
+            "config": {
+              "resources": "[\"incoming-bc\"]",
+              "applyPolicies": "[\"approval role policy\"]"
+            }
+          },
+          {
+            "name": "user permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view"
+            ],
+            "config": {
+              "resources": "[\"incoming-bc\"]",
+              "applyPolicies": "[\"user role policy\"]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "beneficiary-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "beneficiary-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "beneficiary-v1",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          },
+          {
+            "name": "beneficiary",
+            "uris": [
+              "/api/v2/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "beneficiary view role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"beneficiary-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "beneficiary data entry role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"beneficiary-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "beneficiary verifier role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"beneficiary-resources/verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "beneficiary approval role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"beneficiary-resources/approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "beneficiary view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view"
+            ],
+            "config": {
+              "resources": "[\"beneficiary\",\"beneficiary-v1\"]",
+              "applyPolicies": "[\"beneficiary view role policy\"]"
+            }
+          },
+          {
+            "name": "beneficiary data entry permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "create"
+            ],
+            "config": {
+              "resources": "[\"beneficiary\",\"beneficiary-v1\"]",
+              "applyPolicies": "[\"beneficiary data entry role policy\"]"
+            }
+          },
+          {
+            "name": "beneficiary verifier permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "verify"
+            ],
+            "config": {
+              "resources": "[\"beneficiary\",\"beneficiary-v1\"]",
+              "applyPolicies": "[\"beneficiary verifier role policy\"]"
+            }
+          },
+          {
+            "name": "beneficiary approval permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "approve"
+            ],
+            "config": {
+              "resources": "[\"beneficiary\",\"beneficiary-v1\"]",
+              "applyPolicies": "[\"beneficiary approval role policy\"]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "bi-dashboard-resources",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "secret",
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "authorizationSettings": {
+        "clientId": "bi-dashboard-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "bi-dashboard",
+            "uris": [
+              "/api/v1/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "bi-dashboard view role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"bi-dashboard-resources/viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "bi-dashboard data entry role policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"bi-dashboard-resources/creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "bi-dashboard view permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "view"
+            ],
+            "config": {
+              "resources": "[\"bi-dashboard\"]",
+              "applyPolicies": "[\"bi-dashboard view role policy\"]"
+            }
+          },
+          {
+            "name": "bi-dashboard data entry permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "scopes": [
+              "create"
+            ],
+            "config": {
+              "resources": "[\"bi-dashboard\"]",
+              "applyPolicies": "[\"bi-dashboard data entry role policy\"]"
+            }
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "bank-profile-resource",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "secret": "secret",
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "/*"
+      ],
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "webOrigins": [],
+      "notBefore": 0,
+      "attributes": {
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "saml.assertion.signature": "false",
+        "saml.client.signature": "false",
+        "saml.encrypt": "false",
+        "saml.authnstatement": "false",
+        "saml.onetimeuse.condition": "false",
+        "saml_force_name_id_format": "false",
+        "saml.multivalued.roles": "false",
+        "saml.force.post.binding": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "display.on.consent.screen": "false"
+      },
+      "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "bank-profile-resource",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "bank-profile",
+            "uris": [
+              "/*/api/v1/bank-profiles/*"
+            ],
+            "scopes": [
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              },
+              {
+                "name": "view"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          },
+          {
+            "name": "view"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Creator Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Viewer Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Create Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank-profile\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"Creator Role Policy\"]"
+            }
+          },
+          {
+            "name": "View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank-profile\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"Viewer Role Policy\"]"
+            }
+          },
+          {
+            "name": "Verify Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank-profile\"]",
+              "scopes": "[ \"verify\"]",
+              "applyPolicies": "[\"Verifier Role Policy\"]"
+            }
+          },
+          {
+            "name": "Approve Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"bank-profile\"]",
+              "scopes": "[ \"approve\"]",
+              "applyPolicies": "[\"Approval Role Policy\"]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clientId": "entitlement-rule-resources",
+      "name": "entitlement-rule-resources",
+      "rootUrl": "",
+      "baseUrl": "",
+      "enabled": true,
+      "secret": "secret",
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "/*"
+      ],
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "frontchannelLogout": false,
+      "webOrigins": [],
+      "notBefore": 0,
+      "attributes": {
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "saml.assertion.signature": "false",
+        "saml.client.signature": "false",
+        "saml.encrypt": "false",
+        "saml.authnstatement": "false",
+        "saml.onetimeuse.condition": "false",
+        "saml_force_name_id_format": "false",
+        "saml.multivalued.roles": "false",
+        "saml.force.post.binding": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "display.on.consent.screen": "false"
+      },
+      "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "clientId": "entitlement-rule-resources",
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "resources": [
+          {
+            "name": "entitlement",
+            "uris": [
+              "/*/api/v1/entitlement-rules/*"
+            ],
+            "scopes": [
+              {
+                "name": "view"
+              },
+              {
+                "name": "create"
+              },
+              {
+                "name": "verify"
+              },
+              {
+                "name": "approve"
+              }
+            ]
+          }
+        ],
+        "scopes": [
+          {
+            "name": "view"
+          },
+          {
+            "name": "create"
+          },
+          {
+            "name": "verify"
+          },
+          {
+            "name": "approve"
+          }
+        ],
+        "policies": [
+          {
+            "name": "Approval Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-approval\",\"required\":false},{\"id\":\"corporate-approval\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Verifier Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-verifier\",\"required\":false},{\"id\":\"corporate-verifier\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Creator Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-creator\",\"required\":false},{\"id\":\"corporate-creator\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Viewer Role Policy",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "roles": "[{\"id\":\"bank-viewer\",\"required\":false},{\"id\":\"corporate-viewer\",\"required\":false}]"
+            }
+          },
+          {
+            "name": "Create Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"entitlement\"]",
+              "scopes": "[\"create\"]",
+              "applyPolicies": "[\"Creator Role Policy\"]"
+            }
+          },
+          {
+            "name": "View Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"entitlement\"]",
+              "scopes": "[\"view\"]",
+              "applyPolicies": "[\"Viewer Role Policy\"]"
+            }
+          },
+          {
+            "name": "Approve Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"entitlement\"]",
+              "scopes": "[\"approve\"]",
+              "applyPolicies": "[\"Approval Role Policy\"]"
+            }
+          },
+          {
+            "name": "verify Permission",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"entitlement\"]",
+              "scopes": "[\"verify\"]",
+              "applyPolicies": "[\"Verifier Role Policy\"]"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "clientScopeMappings": {
+    "realm-management": [
+      {
+        "client": "admin-client",
+        "roles": [
+          "realm-admin"
+        ]
+      }
+    ]
+  },
+  "browserFlow": "browser",
+  "registrationFlow": "registration",
+  "directGrantFlow": "direct grant",
+  "resetCredentialsFlow": "reset credentials",
+  "clientAuthenticationFlow": "clients",
+  "dockerAuthenticationFlow": "docker auth",
+  "attributes": {
+    "_browser_header.xXSSProtection": "1; mode=block",
+    "_browser_header.strictTransportSecurity": "max-age=31536000; includeSubDomains",
+    "_browser_header.xFrameOptions": "DENY",
+    "permanentLockout": "false",
+    "quickLoginCheckMilliSeconds": "1000",
+    "_browser_header.xRobotsTag": "none",
+    "maxFailureWaitSeconds": "900",
+    "minimumQuickLoginWaitSeconds": "60",
+    "failureFactor": "15",
+    "defaultSignatureAlgorithm": "RS256",
+    "actionTokenGeneratedByUserLifespan": "300",
+    "maxDeltaTimeSeconds": "43200",
+    "_browser_header.xContentTypeOptions": "nosniff",
+    "offlineSessionMaxLifespan": "5184000",
+    "actionTokenGeneratedByAdminLifespan": "43200",
+    "_browser_header.contentSecurityPolicyReportOnly": "",
+    "bruteForceProtected": "true",
+    "_browser_header.contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+    "waitIncrementSeconds": "60",
+    "offlineSessionMaxLifespanEnabled": "false"
+  }
+}

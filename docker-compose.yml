@@ -1,0 +1,81 @@
+version: '2'
+services:
+  ibm-was:
+    image: ibmcom/websphere-traditional:latest
+    ports:
+      - "9043:9043"
+      - "9443:9443"
+      - "9080:9080"
+#    volumes:
+#      - ./:/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01
+#      - ./PASSWORD:/tmp
+
+  service-management:
+    image: harbor.progressoft.io/kryptonite/service-management:v1.1.1
+    ports:
+      - "8022:8080"
+    environment:
+      - server.port=8080
+      - api.gateway.url= http://ibm-was:9080
+  business-lookups:
+    image: notification-service:1.0
+    ports:
+      - "8023:8080"
+    environment:
+      - server.port=8080
+#  business-lookups:
+#    image: harbor.progressoft.io/kryptonite/business-lookups:latest
+#    ports:
+#      - "7070:8080"
+#    environment:
+#      - server.port=8080
+#      - server.max-http-header-size=1048576
+#      - corpay.security.enabled=true
+#      - corpay.security.resource-client-id=banks-resources
+#      - corpay.security.policy-config-file-path=policy-config.json
+#      - corpay.security.excludePattern=/resources,/actuator/health,/favicon.ico,/error
+#      - corpay.security.identityProvider=http://secure:8080/auth
+#      - spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+#      - security.basic.enabled=false
+#      - management.security.enabled=false
+#      - jackson.serialization.WRITE_DATES_AS_TIMESTAMPS=false
+#  secure:
+#    image: jboss/keycloak:6.0.1
+#    ports:
+#      - "9990:8080"
+#    environment:
+#      - KEYCLOAK_USER=admin
+#      - KEYCLOAK_PASSWORD=admin
+#      - DB_VENDOR=h2
+#      - KEYCLOAK_IMPORT=/scripts/corpay-realm.json
+#      - PROXY_ADDRESS_FORWARDING=true
+#    volumes:
+#      - ./:/scripts
+#  api:
+#    image: harbor.progressoft.io/kryptonite/api-gateway:latest
+#    ports:
+#      - "9092:8080"
+#    links:
+#      - secure
+#    environment:
+#      - server.max-http-header-size=1048576
+#      - log4j.rootlogger=INFO
+#      - zuul.ignored-services=*
+#      - zuul.routes.secure.url=http://secure:8080
+#      - zuul.routes.secure.path=/**
+#      - zuul.routes.secure.strip-prefix=false
+#      - corpay.security.enabled=false
+#      - security.basic.enable=false
+#      - zuul.routes.service-management.url=http://service-management:8080
+#      - zuul.routes.service-management.path=/service-management/**
+#      - zuul.routes.service-management.strip-prefix=true
+#      - zuul.routes.business-lookups.url=http://business-lookups:8080
+#      - zuul.routes.business-lookups.path=/business-lookups/**
+#      - zuul.routes.business-lookups.strip-prefix=true
+#      - management.security.enabled=false
+#      - zuul.ignore-security-headers=false
+#      - zuul.sensitive-headers= Cookie,Set-Cookie,Authorization
+#      - zuul.host.connect-timeout-millis=60000
+#      - zuul.host.socket-timeout-millis=60000
+#
+
